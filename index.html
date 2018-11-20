@@ -6,7 +6,6 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -85,7 +84,7 @@
             <div id = "thumbpage">
             </div> <!-- Thumbnail screen -->
             <div id = "createform">
-              <form onsubmit = "return load_home_page()">
+              <form id = "new_fork_form">
                 <h1><input type = "text" name = "fork-title" placeholder="Enter Fork Name Here"/></h1>
                 <table id= "create-fork-table">
                   <tbody>
@@ -113,6 +112,8 @@
                   </tfoot>
                 </table>
               </form>
+            </div>
+            <div id = "forkInstructions">
             </div>
           </div>
         </div>
