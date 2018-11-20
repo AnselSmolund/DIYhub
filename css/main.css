@@ -1,0 +1,64 @@
+/* index.html */
+
+#landing-title{
+  text-align: center;
+}
+#landing-fork-window{
+  border: 2px solid black;
+  height: 500px;
+}
+#create-new-fork-btn{
+  position: absolute;
+  right: 2%;
+  top: 4%;
+}
+#scrollable-content{
+  height: 85%;
+  overflow: auto;
+}
+#scrollable-content img{
+  max-height: 50px;
+  padding: 5px;
+}
+#fork-table{
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 30px 10px;
+  width: 100%;
+}
+
+#fork-back-button{
+  display: none;
+  position: absolute;
+  left: 2%;
+  top: 4%;
+}
+
+/* thumbnail page styles */
+
+#thumbpage{
+  width: 100%;
+  height: 300%;
+  text-align: center;
+}
+
+#thumbpage img{
+  width: 400px !important;
+  min-height: 200px !important;
+}
+/* createform styles */
+#createform{
+  display: none;
+}
+#create-fork-table tr {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+#create-fork-table tbody button{
+  padding: 20px;
+  margin-left: 20px;
+}
+#create-fork-table tfoot{
+  margin-top: 40px;
+  margin-left: 20px;
+}

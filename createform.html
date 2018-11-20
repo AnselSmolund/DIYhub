@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+      <form onsubmit = "return load_home_page()">
+        <h1><input type = "text" name = "fork-title" placeholder="Enter Fork Name Here"/></h1>
+        <table id= "create-fork-table">
+          <tbody>
+            <tr id = "step-1">
+              <td><h3>Step 1: </h3>
+              <textarea cols = "80" name = "step-1" placeholder= "Type Here"> </textarea></td>
+              <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </td>
+            </tr>
+            <tr id = "step-2">
+              <td><h3>Step 2: </h3>
+              <textarea cols = "80" name = "step-2" placeholder= "Type Here"> </textarea></td>
+              <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </td>
+            </tr>
+            <tr id = "step-3">
+              <td><h3>Step 3: </h3>
+              <textarea cols = "80" name = "step-3" placeholder= "Type Here"> </textarea></td>
+              <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </button></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr style = "border-bottom: none">
+              <td><button id = "add-step" class = "btn btn-default" onclick = "load_home_page()"> Add step</button></td>
+              <td><input type = "submit" Value = "Submit" class = "btn btn-success"/></td>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+      <script src="js/vendor/bootstrap.min.js"></script>
+      <script src="js/main.js"></script>
+    </body>
+</html>
