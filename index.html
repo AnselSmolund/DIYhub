@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/index.html">DIYHub</a>
+          <a class="navbar-brand" href="#">DIYHub</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
@@ -71,8 +71,8 @@
           <p id = "component-1"><button onclick = "load_home_page(0)" class="btn btn-default" href="#" role="button">Curtain Rod + Motor &raquo;</button></p>
           <p id = "component-2"><button onclick = "load_home_page(1)" class="btn btn-default" href="#" role="button">Arduino Mount &raquo;</button></p>
           <p id = "component-3"><button onclick = "load_home_page(2)" class="btn btn-default" href="#" role="button">Controls/Switches &raquo;</button></p>
-          <p id = "component-4"><button class="btn btn-default" href="#" role="button">Mounting Bracketrs &raquo;</button></p>
-          <p id = "component-5"><button class="btn btn-default" href="#" role="button">Window Shade Fabric &raquo;</button></p>
+          <p id = "component-4"><button onclick = "load_home_page(3)" class="btn btn-default" href="#" role="button">Mounting Brackets &raquo;</button></p>
+          <p id = "component-5"><button onclick = "load_home_page(4)" class="btn btn-default" href="#" role="button">Window Shade Fabric &raquo;</button></p>
         </div>
         <div id = "landing-fork-window" class="col-md-8">
           <button onclick = "back_to_thumb_page()" id = "fork-back-button" type="button" class="btn btn-default" aria-label="Left Align">
@@ -85,28 +85,28 @@
             </div> <!-- Thumbnail screen -->
             <div id = "createform">
               <form id = "new_fork_form">
-                <h1><input type = "text" name = "fork-title" placeholder="Enter Fork Name Here"/></h1>
+                <h1><input id ="fork-title-input" type = "text" name = "fork-title" placeholder="Enter Fork Name Here"/></h1>
                 <table id= "create-fork-table">
                   <tbody>
                     <tr id = "step-1">
                       <td><h3>Step 1: </h3>
-                      <textarea cols = "80" name = "step-1" placeholder= "Type Here"> </textarea></td>
-                      <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </td>
+                      <textarea rows = "5" cols = "80" name = "step-1" placeholder= "Type Here"> </textarea></td>
+                      <td><button id = "upload-media" class = "btn btn-primary"> Upload Media </td>
                     </tr>
                     <tr id = "step-2">
                       <td><h3>Step 2: </h3>
-                      <textarea cols = "80" name = "step-2" placeholder= "Type Here"> </textarea></td>
-                      <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </td>
+                      <textarea rows = "5" cols = "80" name = "step-2" placeholder= "Type Here"> </textarea></td>
+                      <td><button id = "upload-media" class = "btn btn-primary"> Upload Media </td>
                     </tr>
                     <tr id = "step-3">
                       <td><h3>Step 3: </h3>
-                      <textarea cols = "80" name = "step-3" placeholder= "Type Here"> </textarea></td>
-                      <td><button id = "upload-image" class = "btn btn-primary"> Upload Image </button></td>
+                      <textarea rows = "5" cols = "80" name = "step-3" placeholder= "Type Here"> </textarea></td>
+                      <td><button id = "upload-media" class = "btn btn-primary"> Upload Media </button></td>
                     </tr>
                   </tbody>
                   <tfoot>
+                    <td> Image URL: <input name = "thumbnail-img-url" type = "url" placeholder="image.jpg"/></td>
                     <tr style = "border-bottom: none">
-                      <td><button id = "add-step" class = "btn btn-default" onclick = "load_home_page()"> Add step</button></td>
                       <td><input type = "submit" Value = "Submit" class = "btn btn-success"/></td>
                     </tr>
                   </tfoot>

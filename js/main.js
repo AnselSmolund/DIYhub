@@ -6,7 +6,7 @@ var currentComponent = 0;
 // Get json data from server
 $(document).ready( function() {
   (function() {
-    $.getJSON( "https://api.myjson.com/bins/118xpy", {format: "json"})
+    $.getJSON( "https://api.myjson.com/bins/fj1km", {format: "json"})
       .done(function( data ) {
         forkdata = data;
       });
@@ -22,26 +22,36 @@ function load_instructions_page(forkComponent){
   document.getElementById('forkInstructions').innerHTML = "<div class='row'>"
   for(var i = 0; i < steps.length; i++){
     document.getElementById('forkInstructions').innerHTML +=
-    "<div class = 'col-m-8'> <h3> Step " + i + " </h3> " + steps[i] + " </p> </div></div><div class = 'row'>"
+    "<div class = 'col-m-8'> <h3> Step " + (i + 1) + " </h3> " + steps[i] + " </p> </div></div><div class = 'row'>"
   }
 
 }
 
-// function create_new_fork(){
-//   var queryString = $('#new_fork_form').serialize();
-//   alert(queryString);
-//   return false;
-//
-// }
+function removeFork(forkComponent){
+  forkdata.components[currentComponent].forks.splice(forkComponent,1);
+  var updatedData = JSON.stringify(forkdata);
+  $.ajax({
+    url: "https://api.myjson.com/bins/fj1km",
+    type: "PUT",
+    data: updatedData,
+    contentType: "application/json; charset=utf-8",
+    dataType: "json",
+    success: function (data, textStatus, jqXHR) {
+        console.log("hi");
+    }
+  });
+  load_home_page(currentComponent);
+}
 
 $('#new_fork_form').submit(function(e){
   e.preventDefault();
   console.log(forkdata);
 
   var fieldValuePairs = $('#new_fork_form').serializeArray();
+  console.log(fieldValuePairs);
   var newObj = {
               "forkname":fieldValuePairs[0].value,
-              "url":"https://makinglemonadeblog.com/wp-content/uploads/2014/05/DIY-pipe-curtain-rod-west-elm-knockoff-685x1024.jpg",
+              "url": fieldValuePairs[4].value,
               "steps":[
                 fieldValuePairs[1].value,
                 fieldValuePairs[2].value,
@@ -54,16 +64,15 @@ $('#new_fork_form').submit(function(e){
 
   var updatedData = JSON.stringify(forkdata);
   $.ajax({
-    url: "https://api.myjson.com/bins/118xpy",
+    url: "https://api.myjson.com/bins/fj1km",
     type: "PUT",
     data: updatedData,
     contentType: "application/json; charset=utf-8",
     dataType: "json",
     success: function (data, textStatus, jqXHR) {
-        console.log("hi");
+        load_home_page(currentComponent);
     }
   });
-  load_home_page(currentComponent);
 });
 // Load the create new fork page
 
@@ -77,6 +86,9 @@ function load_create_page() {
 // Load home page with the right component data
 
 function load_home_page(component) {
+  $(document).ready(function(){
+    $('#scrollable-content').scrollTop(0);
+  });
   var componentData = forkdata.components[component];
   var compForkData = componentData.forks;
   currentComponent = component;
@@ -87,8 +99,11 @@ function load_home_page(component) {
   console.log(forkdata.components[component]);
   document.getElementById('thumbpage').innerHTML = "<div class='row'>"
   for(var i = 0; i < compForkData.length; i++){
-    document.getElementById('thumbpage').innerHTML += "<div onclick = 'load_instructions_page(" + i + ")' id = 'fork-" + i + "'  class = 'col-xs-4'><img class = 'img-responsive' src = " + compForkData[i].url + "></img>" +
-    " <p> " + compForkData[i].forkname + " </p> </div>"
+    console.log(compForkData[i].url);
+    var deleteBtn = "<button onclick = 'removeFork(" + i + ")' id = 'deleteForkBtn' type='button' class='btn btn-default' aria-label='Left Align'> <span class='glyphicon glyphicon-remove' aria-hidden='true'></span></button>"
+    $('#thumbpage').append("<div id = 'fork-" + i + "'  class = 'col-xs-4'><img onclick = 'load_instructions_page(" + i + ")' class = 'img-responsive' src = " + compForkData[i].url + "></img>" +
+    " <p> " + compForkData[i].forkname + " </p> " + deleteBtn + "</div>");
+
   }
   document.getElementById('thumbpage').innerHTML += "</div>"
 }
@@ -96,6 +111,9 @@ function load_home_page(component) {
 // This functions serves the back button
 
 function back_to_thumb_page(){
+  $(document).ready(function(){
+    $('#scrollable-content').scrollTop(0);
+  });
   document.getElementById('thumbpage').style.display = "block";
   document.getElementById('createform').style.display = "none";
   document.getElementById('forkInstructions').style.display = "none";

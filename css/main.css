@@ -45,14 +45,25 @@
 #thumbpage img{
   width: 400px !important;
   min-height: 200px !important;
+  transition: .4s ease-out;
+  margin: 10px auto;
+}
+
+#thumbpage img:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#deleteForkBtn{
+  transform: scale(.7) translateY(-10px);
+  background: none;
 }
 /* createform styles */
 #createform{
   display: none;
 }
 #create-fork-table tr {
-  border-bottom: 1px solid black;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 #create-fork-table tbody button{
   padding: 20px;
@@ -62,6 +73,19 @@
   margin-top: 40px;
   margin-left: 20px;
 }
+#fork-title-input{
+  transform: translateX(25%);
+  border: none;
+  text-align: center;
+  padding-left:50px;
+  padding-right: 50px;
+}
+#fork-title-input:focus{
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+
 
 
 /* Instructions page */
