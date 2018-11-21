@@ -117,4 +117,5 @@ function back_to_thumb_page(){
   document.getElementById('thumbpage').style.display = "block";
   document.getElementById('createform').style.display = "none";
   document.getElementById('forkInstructions').style.display = "none";
+  document.getElementById('fork-back-button').style.display = "none";
 }
