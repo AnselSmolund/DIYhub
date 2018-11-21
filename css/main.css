@@ -65,10 +65,10 @@
 #create-fork-table tr {
   margin-bottom: 30px;
 }
-#create-fork-table tbody button{
+/* #create-fork-table tbody button{
   padding: 20px;
   margin-left: 20px;
-}
+} */
 #create-fork-table tfoot{
   margin-top: 40px;
   margin-left: 20px;
@@ -84,7 +84,11 @@
   outline: none;
   border-bottom: 2px solid black;
 }
-
+#create-fork-submit-btn{
+  transform: translateX(-100%);
+  left: 15px;
+  bottom: 40px;
+}
 
 
 

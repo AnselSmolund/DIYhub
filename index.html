@@ -87,27 +87,20 @@
               <form id = "new_fork_form">
                 <h1><input id ="fork-title-input" type = "text" name = "fork-title" placeholder="Enter Fork Name Here"/></h1>
                 <table id= "create-fork-table">
-                  <tbody>
+                  <tbody id = "table-body">
                     <tr id = "step-1">
                       <td><h3>Step 1: </h3>
                       <textarea rows = "5" cols = "80" name = "step-1" placeholder= "Type Here"> </textarea></td>
                       <td><button class = "btn btn-primary"> Upload Media </td>
                     </tr>
-                    <tr id = "step-2">
-                      <td><h3>Step 2: </h3>
-                      <textarea rows = "5" cols = "80" name = "step-2" placeholder= "Type Here"> </textarea></td>
-                      <td><button class = "btn btn-primary"> Upload Media </td>
-                    </tr>
-                    <tr id = "step-3">
-                      <td><h3>Step 3: </h3>
-                      <textarea rows = "5" cols = "80" name = "step-3" placeholder= "Type Here"> </textarea></td>
-                      <td><button class = "btn btn-primary"> Upload Media </button></td>
-                    </tr>
                   </tbody>
+
                   <tfoot>
+
                     <td> Image URL: <input name = "thumbnail-img-url" type = "url" placeholder="image.jpg"/></td>
-                    <tr style = "border-bottom: none">
-                      <td><input type = "submit" Value = "Submit" class = "btn btn-success"/></td>
+                    <tr>
+                      <td><button style = "margin-top: 10px" type = "button" id = "new-step-btn" class = "btn btn-default" onclick = "new_step()"> New Step </button></td>
+                      <td><input id = "create-fork-submit-btn" type = "submit" Value = "Submit" class = "btn btn-success"/></td>
                     </tr>
                   </tfoot>
                 </table>
